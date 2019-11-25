@@ -1,0 +1,75 @@
+\documentclass[aspectratio=169,x11names]{beamer}
+\usetheme{Pittsburgh}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,arrows,chains}
+
+\author{Jonas Betzendahl}
+\title{Hello, I'm your Edge Case}
+
+\beamertemplatenavigationsymbolsempty 
+
+%src: https://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\begin{document}
+
+\setbeamercolor{background canvas}{bg=black}
+
+\setbeamercolor{normal text}{fg=white}
+\usebeamercolor[fg]{normal text}
+
+\setbeamercolor{titlelike}{fg=white}
+\usebeamercolor[fg]{titlelike}
+
+%------------------------------------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}
+\begin{center}
+\vfill
+\huge ``Hello, I'm your Edge Case!''
+\normalsize 
+\smallskip
+\smallskip
+
+or\\
+``No, seriously! How \emph{do} you ask someone\\ for their gender on the internet?!''
+
+\bigskip\bigskip
+
+\large Jonas Betzendahl, M.Sc.\\
+36c3, Chaos West
+\bigskip\bigskip
+
+\href{https://twitter.com/lambdatotoro}{\includegraphics[scale=0.125]{images/twitter_logo.png}}
+\href{https://chaos.social/@lambdatotoro}{\includegraphics[scale=0.125]{images/mastodon_logo.png}}
+\href{https://github.com/lambdaTotoro}{\includegraphics[scale=0.125]{images/github_logo.png}}
+\href{https://whispeer.de/en/user/jbetzend}{\includegraphics[scale=0.125]{images/whispeer_logo.png}}
+
+\texttt{@lambdaTotoro (@chaos.social)}
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+
+\section{End}
+
+\begin{frame}
+\frametitle{Sources}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+
+\end{document}
+
