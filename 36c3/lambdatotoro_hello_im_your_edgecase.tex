@@ -22,18 +22,22 @@
 %src: https://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
 \definecolor{darkgray}{rgb}{0.2,0.2,0.2}
 \definecolor{darkred}{rgb}{0.25,0,0}
 \definecolor{darkgreen}{rgb}{0,0.25,0}
+\definecolor{item}{rgb}{0.75,0.5,0.25}
 
 \begin{document}
 
 \setbeamercolor{background canvas}{bg=darkgray}
+\setbeamercolor{itemize item}{fg=item}
+\setbeamertemplate{itemize item}[square]
 
-\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{normal text}{fg=lightgray}
 \usebeamercolor[fg]{normal text}
 
-\setbeamercolor{titlelike}{fg=white}
+\setbeamercolor{titlelike}{fg=lightgray}
 \usebeamercolor[fg]{titlelike}
 
 %------------------------------------------------------------------------------------
@@ -71,7 +75,7 @@ or\\
 \begin{minipage}{0.5\textwidth}
 Hello! I am $\uplambda$Totoro. Good to see you!\\
 I am many things, among them \dots
-\medskip
+\bigskip
 
 \begin{itemize}
 \item\dots nonbinary.
@@ -86,10 +90,6 @@ I am many things, among them \dots
 \includegraphics[width=0.8\textwidth,keepaspectratio]{images/pigeon_jonas} 
 \end{center}
 \end{minipage}
-\end{frame}
-
-\begin{frame}
-\frametitle{Who are you?}
 \end{frame}
 
 \begin{frame}
@@ -111,13 +111,14 @@ This is a talk on forms and about the responsibilities of people who design them
 \pause\bigskip
 
 \begin{center}
-Content Notes:\\
+\textbf{Content Notes:}\\
 \emph{Discussion of transmisia, intermisia, involuntary surgery}
 \end{center}
 
 \pause\bigskip
 
 I aim for roughtly the following composition:
+\medskip
 
 \begin{itemize}
 \item One part Education, ``Humans 201''
@@ -156,6 +157,25 @@ Culture influences almost every aspect of our lives. A way of doing things is no
 \end{frame}
 
 \begin{frame}
+\frametitle{Why is this important?}
+\begin{minipage}{0.55\textwidth}
+\large
+Sloppy work on this end of your software\dots
+\bigskip
+\begin{itemize}
+\item\dots hurts your data.
+\item\dots hurts your users.
+\item\dots hurts yourself.
+\end{itemize}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[scale=0.25]{images/curses.png} 
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
 \frametitle{Conclusions, up front!}
 \large
 The central points of this talk are as follows:\bigskip
@@ -180,9 +200,7 @@ The central points of this talk are as follows:\bigskip
 \begin{center}
 \huge
 Hello!\\
-I'm your edge case!\medskip\large
-
-(stories about making the model fit you)
+I'm your edge case!
 \end{center}
 \end{frame}
 
@@ -205,6 +223,9 @@ There's only two genders...
 
 \begin{frame}
 \frametitle{Legal Recognition for Nonbinary People}
+\begin{center}
+\includegraphics[height=0.7\textheight,keepaspectratio]{images/legal_recognition.png} 
+\end{center}
 \end{frame}
 
 \setbeamercolor{background canvas}{bg=darkgreen}
@@ -363,7 +384,23 @@ That sounds like work!
 \setbeamercolor{background canvas}{bg=darkgray}
 
 \begin{frame}
-\frametitle{Comparisons}
+\frametitle{Comparative Bullshit Analysis}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight,keepaspectratio]{images/dbwvb.png} 
+\medskip\large
+
+Salutation: 2 options
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight,keepaspectratio]{images/dbwva.png} 
+\medskip\large
+
+Academic title: 71 options
+\end{center}
+\end{minipage}
 \end{frame}
 
 \setbeamercolor{background canvas}{bg=darkgreen}
@@ -383,57 +420,52 @@ $\Rightarrow$ \emph{Either the information is needed or not, act accordingly.}
 \begin{frame}
 \begin{center}
 \huge
-Can I just ask for preferred salutation and infer gender from that?
+Can I just ask for preferred salutation\\ and infer gender from that?
 \end{center}
 \end{frame}
 \setbeamercolor{background canvas}{bg=darkgray}
 
 \begin{frame}
-\frametitle{Why is this important?}
+\frametitle{Positive Example}
+\begin{center}
+\includegraphics[width=0.8\textwidth,keepaspectratio]{images/lobbycontrol.png} 
+\end{center}
 \end{frame}
+
+\setbeamercolor{background canvas}{bg=darkgreen}
+\begin{frame}
+\begin{center}
+\huge
+Salutations need neutral options too!
+\medskip
+
+\Large
+$\Rightarrow$ \emph{English has ``Mx.'', but ``Hello!'' works everywhere!}
+\end{center}
+\end{frame}
+\setbeamercolor{background canvas}{bg=darkgray}
 
 \section*{Case Study: Gender in Germany}
 
 \begin{frame}
 \frametitle{Case Study: Gender in Germany}
 
-\vspace*{15px}
-
 \begin{center}
 Gender Marker \hfill $\neq$ \hfill Biological Configuration \hfill $\neq$ \hfill Gender \hspace*{30px}
 \end{center}
-
-\vspace*{50px}
-
-\begin{minipage}{0.333\textwidth}
-Four Options:\medskip
+\bigskip
 
 \begin{itemize}
-\item M
-\item F
-\item
-\item D 
+\item \textbf{Gender Marker: Four options}\\
+\textbf{M} / \textbf{F} / \;\; / \textbf{D}\medskip
+
+\item \textbf{Biological Configuration: Many options!}\\
+Dyadic (= not inter), Inter in numerous combinations.
+\medskip
+
+\item \textbf{Gender: Countless options!}\\
+Man, Woman, Genderfluid, Agender, \dots 
 \end{itemize}
-\end{minipage}%
-\begin{minipage}{0.333\textwidth}
-Many options
-\end{minipage}%
-\begin{minipage}{0.333\textwidth}
-\begin{center}
-Countless options:
-\begin{itemize}
-\item Man
-\item Woman
-\item Genderqueer
-\item Agender
-\item Neutrois
-\item Pangender
-\item Demiboy
-\item Demigirl
-\item Two-Spirit
-\end{itemize}
-\end{center}
-\end{minipage}
 
 \end{frame}
 
@@ -463,23 +495,25 @@ Countless options:
 \begin{center}
 \huge
 No, but \emph{seriously}!\\
-How \emph{do} I ask people for their\dots
+How \emph{do} I ask people for their gender?!
 \end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{\dots Gender? \dots Orientation? \dots}
+\frametitle{My best take:}
 \large
 Before asking:
-\begin{itemize}
-\item Make sure you \emph{need} the information.
-\item Make sure \emph{this} is the information you need.
-\item Make sure its \emph{mutable} in your model.
-\item Make sure you \emph{understand} the question you're asking.
-\end{itemize}
-\bigskip
+\medskip
 
-\emph{And then ask!} Tell them, what you need the answer for and give as many options as is reasonable under the circumstances (that's \emph{almost always} more than 2!) but also leave a text field for people who don't find themselves in those options.
+\begin{itemize}
+\pause\item Make sure you \emph{need} the information.
+\pause\item Make sure \emph{this} is the information you need.
+\pause\item Make sure its \emph{mutable} in your model.
+\pause\item Make sure you \emph{understand} the question you're asking.
+\end{itemize}
+\bigskip\medskip
+
+\pause\emph{And then ask!} Tell them, what you need the answer for and give as many options as is reasonable under the circumstances (that's \emph{almost always} more than 2!) but also leave a text field for people who don't find themselves in those options.
 \end{frame}
 
 \begin{frame}
@@ -490,8 +524,9 @@ Before asking:
 \end{frame}
 
 \begin{frame}
+\frametitle{Category Error}
 \begin{center}
-\includegraphics[height=0.8\textheight,keepaspectratio]{images/theashencouncil_01.png} 
+\includegraphics[height=0.7\textheight,keepaspectratio]{images/theashencouncil_01.png} 
 \end{center}
 \end{frame}
 
@@ -502,22 +537,12 @@ Before asking:
 \begin{frame}
 \frametitle{Future Work}
 
-\begin{minipage}{0.5\textwidth}
-\Large
-Addresses:
-\large
-\end{minipage}\pause%
-\begin{minipage}{0.5\textwidth}
-\Large
-Names:
-\large
-\end{minipage}
-\pause\bigskip\large
-
 \begin{center}
-\dots but the way to deal with them is the same!
-\end{center}
+\includegraphics[width=0.7\textwidth,keepaspectratio]{images/humans.png} 
+\large\medskip
 
+Consider also: Names, Addresses, \dots
+\end{center}
 \end{frame}
 
 \begin{frame}
