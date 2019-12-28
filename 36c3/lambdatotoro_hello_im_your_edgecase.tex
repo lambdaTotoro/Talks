@@ -78,11 +78,11 @@ I am many things, among them \dots
 \bigskip
 
 \begin{itemize}
-\item\dots nonbinary.
+\item\dots nonbinary\footnotemark
 \item\dots a M.Sc. in Intelligent Systems
 \item\dots a CS PhD student @ FAU Erlangen
 \item\dots a science communicator
-\item\dots not a doctor / psychologist
+\item\dots dealing with this since 10 years ago.
 \end{itemize}
 \end{minipage}%
 \begin{minipage}{0.5\textwidth}
@@ -90,6 +90,7 @@ I am many things, among them \dots
 \includegraphics[width=0.8\textwidth,keepaspectratio]{images/pigeon_jonas} 
 \end{center}
 \end{minipage}
+\footnotetext{Pronouns: he/him or they/them}
 \end{frame}
 
 \begin{frame}
@@ -106,7 +107,7 @@ It's a talk about this:\medskip
 \frametitle{What is this talk? (2)}
 \large
 
-This is a talk on forms and about the responsibilities of people who design them. It's a talk about how technology is not politically neutral.
+This is a talk on forms and about the responsibilities of people who design them. It's a talk about how technology by itself is not neutral.
 
 \pause\bigskip
 
@@ -135,7 +136,7 @@ I aim for roughtly the following composition:
 
 
 \begin{frame}
-\frametitle{Axioms!}
+\frametitle{Axioms}
 A few things this talk is \emph{not} an invitation to debate:
 \bigskip
 
@@ -167,6 +168,9 @@ Sloppy work on this end of your software\dots
 \item\dots hurts your users.
 \item\dots hurts yourself.
 \end{itemize}
+\medskip
+
+Nobody likes unnecessary frustration.
 \end{minipage}%
 \begin{minipage}{0.45\textwidth}
 \begin{center}
@@ -187,7 +191,7 @@ The central points of this talk are as follows:\bigskip
 \emph{Humans change all the time. Your model will have to change with them!}\medskip
 \pause\item \textbf{The empty model makes the fewest mistakes!}\\
 \emph{You can't draw wrong conclusions from data you don't collect.}\medskip
-\pause\item \textbf{Precision and transparency are key!}\\
+\pause\item \textbf{Transparency is key!}\\
 \emph{Make sure that both you and your users know what you're using the data for.}
 \end{itemize}
 \end{frame}
@@ -260,15 +264,6 @@ Okay, three! There's only three genders!
 \end{frame}
 
 \begin{frame}
-\begin{center}
-\includegraphics[height=0.75\textheight,keepaspectratio]{images/mftrans.jpg} 
-\bigskip\Large
-
-Also, please think about messages you're sending!
-\end{center}
-\end{frame}
-
-\begin{frame}
 \frametitle{Even corporations are catching on...}
 \begin{center}
 \includegraphics[width=0.9\textwidth,keepaspectratio]{images/tinder_gender.png} 
@@ -282,13 +277,15 @@ Also, please think about messages you're sending!
 \pause
 \Put(225,275){\includegraphics[scale=0.5,angle=-5]{images/800px-Neutrois.png}}
 \pause
-\Put(25,275){\includegraphics[scale=0.5,angle=0]{images/800px-Bigender-2.png}}
+\Put(25,275){\includegraphics[scale=0.5,angle=2]{images/800px-Bigender-2.png}}
 \pause
-\Put(125,200){\includegraphics[scale=0.5,angle=0]{images/800px-Trigender-4.png}}
+\Put(125,200){\includegraphics[scale=0.5,angle=-3]{images/800px-Trigender-4.png}}
 \pause
-\Put(200,125){\includegraphics[scale=0.5,angle=0]{images/800px-Polygender.png}}
+\Put(200,125){\includegraphics[scale=0.5,angle=4]{images/800px-Polygender.png}}
 \pause
-\Put(200,0){\includegraphics[scale=0.5,angle=0]{images/800px-Pangender.png}}
+\Put(200,0){\includegraphics[scale=0.5,angle=-4]{images/800px-Pangender.png}}
+\pause
+\Put(-20,-20){\includegraphics[scale=0.35,angle=-10]{images/Nonbinary.png}}
 \end{frame}
 
 \setbeamercolor{background canvas}{bg=darkred}
@@ -426,7 +423,26 @@ Can I just ask for preferred salutation\\ and infer gender from that?
 \setbeamercolor{background canvas}{bg=darkgray}
 
 \begin{frame}
-\frametitle{Positive Example}
+\begin{center}
+\includegraphics[height=0.8\textheight,keepaspectratio]{images/thomas.png} 
+\end{center}
+\end{frame}
+
+\setbeamercolor{background canvas}{bg=darkgreen}
+\begin{frame}
+\begin{center}
+\huge
+Guessing gender doesn't work!
+\medskip
+
+\Large
+$\Rightarrow$ \emph{Not from name, face, tweets, or anything. \\ You} will \emph{get this wrong!}
+\end{center}
+\end{frame}
+\setbeamercolor{background canvas}{bg=darkgray}
+
+\begin{frame}
+\frametitle{Salutations: Positive Example}
 \begin{center}
 \includegraphics[width=0.8\textwidth,keepaspectratio]{images/lobbycontrol.png} 
 \end{center}
@@ -460,7 +476,7 @@ Gender Marker \hfill $\neq$ \hfill Biological Configuration \hfill $\neq$ \hfill
 \textbf{M} / \textbf{F} / \;\; / \textbf{D}\medskip
 
 \item \textbf{Biological Configuration: Many options!}\\
-Dyadic (= not inter), Inter in numerous combinations.
+Two dyadic (= not inter), inter in numerous combinations.
 \medskip
 
 \item \textbf{Gender: Countless options!}\\
@@ -509,11 +525,14 @@ Before asking:
 \pause\item Make sure you \emph{need} the information.
 \pause\item Make sure \emph{this} is the information you need.
 \pause\item Make sure its \emph{mutable} in your model.
-\pause\item Make sure you \emph{understand} the question you're asking.
 \end{itemize}
 \bigskip\medskip
 
-\pause\emph{And then ask!} Tell them, what you need the answer for and give as many options as is reasonable under the circumstances (that's \emph{almost always} more than 2!) but also leave a text field for people who don't find themselves in those options.
+\pause\emph{And then ask!}\medskip
+
+Tell them, what you need the answer for and give either none or as many options as is reasonable under the \uncover<5->{circumstances\footnote<5->{that's \emph{almost always} more than 2!}} but always also give a text field for free-form answers.
+
+
 \end{frame}
 
 \begin{frame}
@@ -524,7 +543,7 @@ Before asking:
 \end{frame}
 
 \begin{frame}
-\frametitle{Category Error}
+\frametitle{Also applies to other questions}
 \begin{center}
 \includegraphics[height=0.7\textheight,keepaspectratio]{images/theashencouncil_01.png} 
 \end{center}
@@ -557,7 +576,7 @@ The central points of this talk are as follows:\bigskip
 \emph{Humans change all the time. Your model will have to change with them!}\medskip
 \item \textbf{The empty model makes the fewest mistakes!}\\
 \emph{You can't draw wrong conclusions from data you don't collect.}\medskip
-\item \textbf{Precision and transparency are key!}\\
+\item \textbf{Transparency is key!}\\
 \emph{Make sure that both you and your users know what you're using the data for.}
 \end{itemize}
 
