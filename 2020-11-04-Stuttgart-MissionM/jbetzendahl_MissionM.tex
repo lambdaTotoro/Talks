@@ -1,4 +1,4 @@
-\documentclass[aspectratio=169,x11names]{beamer}
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
 \usetheme{Pittsburgh}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
@@ -11,6 +11,9 @@
 \usepackage{wrapfig}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{scalerel,xparse}
 
 \usetikzlibrary{shapes,arrows,chains}
 
@@ -18,14 +21,21 @@
 \title{Meine Kollegin -- Ein Roboter?}
 
 \beamertemplatenavigationsymbolsempty 
+\setbeamercolor{frametitle}{fg=black}
 
 %src: https://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
 \def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
 
 \begin{document}
 
+\NewDocumentCommand\emojieu{}{
+    \scalerel*{
+        \includegraphics{images/flag-european-union.png}
+    }{X}
+}
+
 %------------------------------------------------------------------------------------
-\section{Introduction}
+\section{Einführung}
 \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/background_title}}
 
 \begin{frame}
@@ -39,7 +49,7 @@
 Künstliche Intelligenz in Theorie und Praxis
 \bigskip\bigskip
 
-\large Jonas Betzendahl, M.Sc.\\\normalsize FAU Erlangen-Nürnberg, KWARC
+\large Jonas Betzendahl, M.Sc.\\\normalsize FAU Erlangen-Nürnberg
 \bigskip\bigskip\large
 
 \href{https://twitter.com/lambdatotoro}{\includegraphics[scale=0.125]{images/twitter_logo.png}}
@@ -54,9 +64,106 @@ Künstliche Intelligenz in Theorie und Praxis
 \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/background_blank}}
 
 \begin{frame}
+\frametitle{}
 \end{frame}
 
 \begin{frame}
+\frametitle{}
+\end{frame}
+
+\section{Grundlagen}
+
+\begin{frame}
+\frametitle{\glqq Algorithmen\grqq}
+\begin{center}
+\includegraphics[height=0.75\paperheight,keepaspectratio]{images/man-cooking-clipart} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\glqq Maschinelles Lernen\grqq}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/funnel} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\glqq Künstliche Intelligenz\grqq}
+\pause
+
+\begin{minipage}{0.5\paperwidth}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/man-shrug} 
+\end{center}
+\end{minipage}\begin{minipage}{0.5\paperwidth}
+
+\end{minipage}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Mögliche Anwendungen:}
+\end{frame}
+
+\section{Fallstudien}
+
+\begin{frame}
+\frametitle{}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\end{frame}
+
+\begin{frame}
+\frametitle{}
+\end{frame}
+
+\section{Richtlinien}
+
+\begin{frame}[fragile]
+\frametitle{\emph{8 Prinzipien}}
+\begin{center}
+Das Institut für ethisches Maschine Learning schlägt folgende Richtlinien vor:
+\end{center}
+\medskip
+
+\large
+\setlength{\leftmargini}{150pt}
+\begin{itemize}[label=\textcolor{RedOrange}{\textbullet}]
+\item Human Augmentation
+\item Bias Evaluation
+\item Explainability by Justification 
+\item Reproducible Operations
+\item Displacement Strategy
+\item Practical Accuracy
+\item Trust by Privacy
+\item Data Risk Awareness
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{\emojieu EU-Richtlinien (1)}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quellen}
+\small
+\begin{center}
+\textbf{Diese Präsentation:}\\
+\url{github.com/lambdaTotoro/Talks/blob/master/2020-11-04-Stuttgart-MissionM/}
+\end{center}
+\bigskip
+
+\begin{itemize}
+\item The Institute for Ethical AI \& Machine Learning: \url{https://ethical.institute/}
+\item Awful AI: \url{https://github.com/daviddao/awful-ai}
+\end{itemize}
 \end{frame}
 
 \end{document}
