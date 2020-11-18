@@ -1,0 +1,411 @@
+\documentclass[aspectratio=169,x11names]{beamer}
+\usetheme{Pittsburgh}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{tikz}
+
+\usetikzlibrary{shapes,arrows,chains}
+
+\author{Jonas Betzendahl}
+\title{Algorithmen und Du}
+
+\beamertemplatenavigationsymbolsempty 
+
+%src: https://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\begin{document}
+
+%------------------------------------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}
+\begin{center}
+\vfill
+\huge Algorithmen und Du
+\normalsize 
+\smallskip
+\smallskip
+
+Warum Künstliche Intelligenz Nie Politisch Neutral Sein Kann
+\bigskip\bigskip
+
+\large Jonas Betzendahl, M.Sc.\\\normalsize FAU Erlangen-Nürnberg, KWARC
+\bigskip\bigskip\large
+
+\href{https://twitter.com/lambdatotoro}{\includegraphics[scale=0.125]{images/twitter_logo.png}}
+\href{https://chaos.social/@lambdatotoro}{\includegraphics[scale=0.125]{images/mastodon_logo.png}}
+\href{https://github.com/lambdaTotoro}{\includegraphics[scale=0.125]{images/github_logo.png}}
+
+\texttt{@lambdaTotoro (@chaos.social)}
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+
+
+\begin{frame}
+\begin{center}
+\Huge
+Künstliche Intelligenz
+\bigskip
+
+\LARGE
+The hype is real\dots
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Menschen sind \emph{sehr} fehlbar...}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\includegraphics[keepaspectratio, height=0.75\textheight]{images/calipers_transparent}
+\end{center}
+\end{minipage}\begin{minipage}{0.5\textwidth}
+\begin{center}
+\pause
+\includegraphics[keepaspectratio, height=0.75\textheight]{images/human_bias}
+\end{center}
+\end{minipage}
+\end{frame}
+
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/sloth}}
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+    \Put(150,170){\color{black}\huge \rotatebox{-10}{...und \emph{sehr} langsam!}}
+    \end{frame}
+}
+
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/elektronengehirn}}
+
+\begin{frame}
+\pause
+\Put(30,0){\includegraphics[scale=0.4, angle=5]{images/ki_lufthansa}}
+\pause
+\Put(20,0){\includegraphics[scale=0.25, angle=25]{images/gema_ki_klein}}
+\pause
+\Put(10,0){\includegraphics[scale=0.4, angle=-15]{images/ki_suicide}}
+\pause
+\Put(10,-200){\includegraphics[scale=0.3, angle=-4]{images/ki_medicine}}
+\pause
+\Put(0,0){\includegraphics[scale=0.35, angle=10]{images/ki_law}}
+\end{frame}
+}
+
+%\begin{frame}
+%\frametitle{Bonusrunde!}
+%\begin{center}
+%\large
+%Science-Slam-ception!
+%
+%\huge
+%\emph{Blockchains}
+%\bigskip
+%
+%\large
+%Macht eine Blockchain für mich, meine Firma\\ oder meine Organisation Sinn?
+%\pause
+%\bigskip\bigskip\bigskip
+%
+%\Huge
+%\includegraphics[scale=0.65]{images/pointing.png} \textcolor{red}{\textbf{\textit{Nein!}}} \includegraphics[scale=0.65]{images/pointing2.png}
+%\end{center}
+%\end{frame}
+
+%------------------------------------------------------------------------------------
+
+\section{How it works and weaknesses}
+
+\begin{frame}
+\begin{center}
+\Huge
+Algorithmen \&\\
+Maschinelles Lernen
+\bigskip
+
+\LARGE
+Was ist das? Wie geht das?\\ Und was sind die Probleme?
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[height=0.8\textheight, keepaspectratio]{images/man-cooking-clipart}
+\Put(-230,270){\includegraphics[scale=0.05, keepaspectratio,angle=15]{images/arrow}}
+\Put(-275,325){\huge Algorithmen}
+\end{center}
+\end{frame}
+
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/funnel}}
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+    \end{frame}
+}
+
+\begin{frame}[fragile]
+\frametitle{Beeindruckende Mathematik}
+
+\begin{minipage}{0.52\textwidth}
+\begin{center}
+\includegraphics[scale=0.3]{images/linear_nonlinear.png} 
+\end{center}
+\end{minipage}\begin{minipage}{0.35\textwidth}
+$$y_k = \varphi\left(\sum_{j=0}^m w_{kj}x_j\right)$$
+\end{minipage}
+
+\small
+\begin{minipage}{0.47\textwidth}
+$$\Delta w_{ij}=-\eta \frac{\partial E}{\partial w_{ij}} = -\eta o_i \delta_j$$
+$$\lambda(x) = C(t-x)^2$$
+$$r_i \dot{y_i} = -y_i \sum_{j=1}^n w_{ji}\sigma\left(y_j - \Theta_j\right) * I_i(t)$$
+\end{minipage}\begin{minipage}{0.47\textwidth}
+\begin{center}
+\includegraphics[scale=0.35]{images/recursive.jpg} 
+\end{center}
+\end{minipage}
+\end{frame}
+
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,keepaspectratio]{images/no_bias_wide}}
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+    \frametitle{Public Opinion}
+    \end{frame}
+    
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/chain}}
+    \begin{frame}
+    \frametitle{Fehlerquellen}
+    \pause
+    \Put(0,150){\Huge\emph{Was} wird gelernt?}
+    \pause
+    \Put(175,-150){\Huge\emph{Woraus} wird gelernt?}
+    \end{frame}
+}
+
+
+%------------------------------------------------------------------------------------
+
+\section{Surely nobody would be this stupid?}
+
+\begin{frame}
+\begin{center}
+\Huge
+KI in der freien Wildbahn
+\bigskip
+
+\Large
+Leider nicht nur theoretisch problematisch\dots
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Adversarial Objects (1)}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/cat_adversarial}
+\end{center}
+\end{minipage}
+\pause
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/cat_rotated}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Adversarial Objects (2)}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/rifle_turtle} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Guessing things that shouldn't be guessed, badly}
+\begin{center}
+\includegraphics[height=0.175\paperheight,keepaspectratio]{images/genderify_header} 
+\bigskip
+
+\includegraphics[height=0.275\paperheight,keepaspectratio]{images/genderify_ariel}
+\includegraphics[height=0.275\paperheight,keepaspectratio]{images/genderify_dr_ariel} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Erkennung von Panzern}
+\begin{center}
+\includegraphics[height=0.7\textheight, keepaspectratio]{images/tank}
+
+\pause
+\Put(-250,220){\includegraphics[scale=2.5, angle=10]{images/falsch_gelernt.png} }
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Entpixelisierung (1)}
+\begin{center}
+\includegraphics[height=0.7\paperheight,keepaspectratio]{images/example_depixelise} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Entpixelisierung (2)}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.64\paperheight,keepaspectratio]{images/obama_depixelise1} 
+\end{center}
+\end{minipage}\quad\pause \begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.64\paperheight,keepaspectratio]{images/obama_depixelise2} 
+\end{center}
+\end{minipage}
+\pause
+\Put(-240,30){\includegraphics[scale=1.6, angle=-10]{images/falsch_gelernt.png} }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Konsequenzen am Arbeitsmarkt}
+\begin{minipage}{.5\textwidth}
+\begin{center}
+\includegraphics[height=0.75\textheight, keepaspectratio]{images/negativfaktor}
+\end{center}
+\end{minipage}\begin{minipage}{.5\textwidth}
+\begin{center}
+\includegraphics[height=0.75\textheight, keepaspectratio]{images/amazon_hiring}
+\end{center}
+\end{minipage}
+
+\pause
+\Put(-40,200){\includegraphics[scale=2.3, angle=15]{images/konsequenzen_ignoriert.png} }
+\end{frame}
+
+\begin{frame}
+\frametitle{Erkennen von sexueller Orientierung?}
+\begin{minipage}{.6\textwidth}
+\begin{center}
+\includegraphics[height=0.75\textheight, keepaspectratio]{images/paper_orientation}
+\end{center}
+\end{minipage}\hspace*{-25pt}\begin{minipage}{.4\textwidth}
+\begin{center}
+\includegraphics[width=0.99\textwidth, keepaspectratio]{images/composite_faces}
+\end{center}
+\end{minipage}
+
+\pause
+\Put(-100,325){\includegraphics[scale=3, angle=-10]{images/falsch_gelernt.png} }
+\pause
+\Put(-40,200){\includegraphics[scale=2.3, angle=15]{images/konsequenzen_ignoriert.png} }
+\end{frame}
+
+\begin{frame}
+\frametitle{``Phrenology as a Service''}
+\begin{center}
+\includegraphics[keepaspectratio, height=0.7\textheight]{images/hirevue}
+
+\large
+Gesichtsanalyse im Bewerbungsgespräch
+\end{center}
+\pause
+\Put(135,275){\includegraphics[scale=0.3]{images/calipers_transparent}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Phrenologie, aber vom Computer}
+\begin{minipage}{.455\textwidth}
+\begin{center}
+\includegraphics[width=0.9\textwidth, keepaspectratio]{images/phrenology.png}
+\end{center}
+\end{minipage}\begin{minipage}{.545\textwidth}
+\begin{center}
+\includegraphics[width=0.99\textwidth, keepaspectratio]{images/phrenology.jpg}
+\end{center}
+\end{minipage}
+\end{frame}
+
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/thomas}}
+    \setbeamertemplate{navigation symbols}{}
+    \begin{frame}[plain]
+    \end{frame}
+}
+
+%------------------------------------------------------------------------------------
+
+\section{What to do about it?}
+
+\begin{frame}
+\begin{center}
+\huge
+Was tun wir dagegen?
+\medskip
+
+\includegraphics[height=0.75\paperheight,keepaspectratio]{images/eu_prinzipien} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\huge
+Was tun wir dagegen?
+
+\large
+take-home messages
+\normalsize
+\end{center}
+\bigskip
+
+Jedes Mal wenn \glqq Künstliche Intelligenz\grqq\ oder \glqq Maschinelles Lernen\grqq\ aufkommen:
+\medskip
+
+\begin{itemize}
+\item \emph{Woher} wird gelernt? Welches \emph{Datenset} wird benutzt?
+\item \emph{Was} wird gelernt? Worauf wird \emph{optimiert}?
+\item Was sind die \emph{Folgen} von diesen Entscheidungen?
+\item Haben wir eine Möglichkeit, \emph{Menschen} entscheiden zu lassen?
+\end{itemize}
+
+\pause\bigskip\bigskip
+\begin{center}
+\large
+skeptisch bleiben!
+\end{center}
+\Put(265,45){\includegraphics[scale=0.5, keepaspectratio]{images/thinking_emoji}}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+
+\begin{frame}
+\frametitle{Quellen:}
+\scriptsize
+\begin{itemize}
+\item EU-Richtlinien zu Vertrauenswürdiger KI: \url{https://ec.europa.eu/futurium/en/ai-alliance-consultation}
+
+\item Diskriminierung b. Wohnungssuche ``Hanna und Ismail'', Köppen et al.  2017\\
+\url{https://www.hanna-und-ismail.de/}
+
+\item ``Amazon Created a Hiring Tool Using A.I. It Immediately Started Discriminating Against Women.'', Weissmann, 2018\\ \url{https://slate.com/business/2018/10/amazon-artificial-intelligence-hiring-discrimination-women.html}
+
+\item ``Machine Bias'', Angwin et al., ProPublica, 2016\\ \url{https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing}
+
+\item ``Deep Neural Networks Are More Accurate Than Humans at Detecting Sexual Orientation From Facial Images'', Kosinski et al., 2018\\ \url{https://www.gsb.stanford.edu/faculty-research/publications/deep-neural-networks-are-more-accurate-humans-detecting-sexual}
+
+\item ``Negativfaktor Frau'', Ingrid Brodnig, 2018 \\ \url{www.profil.at/meinung/ingrid-brodnig-negativfaktor-frau-10422551}
+
+\item ``AI used for first time in job interviews in UK to find best applicants'', The Telegraph, 2019-09-27 \\ \url{https://www.telegraph.co.uk/news/2019/09/27/ai-facial-recognition-used-first-time-job-interviews-uk-find/}
+
+\end{itemize}
+\end{frame}
+\end{document}
+
