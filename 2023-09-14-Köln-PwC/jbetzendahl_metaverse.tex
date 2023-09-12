@@ -1,0 +1,352 @@
+\documentclass[aspectratio=169,x11names]{beamer}
+\usetheme{Pittsburgh}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{upgreek}
+\usetikzlibrary{shapes,arrows,chains}
+
+\author{Jonas Betzendahl}
+\title{Metaverse - a telescope view into a different universe}
+
+\beamertemplatenavigationsymbolsempty 
+
+%src: https://tex.stackexchange.com/questions/34921/how-to-overlap-images-in-a-beamer-slide
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+\definecolor{lightgray}{rgb}{0.75,0.75,0.75}
+\definecolor{darkgray}{rgb}{0.2,0.2,0.2}
+\definecolor{darkred}{rgb}{0.25,0,0}
+\definecolor{darkgreen}{rgb}{0,0.25,0}
+\definecolor{item}{rgb}{0.75,0.5,0.25}
+
+\begin{document}
+
+\setbeamercolor{background canvas}{bg=darkgray}
+\setbeamercolor{itemize item}{fg=item}
+\setbeamertemplate{itemize item}[square]
+
+\setbeamercolor{normal text}{fg=lightgray}
+\usebeamercolor[fg]{normal text}
+
+\setbeamercolor{titlelike}{fg=lightgray}
+\usebeamercolor[fg]{titlelike}
+
+%------------------------------------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}
+\begin{center}
+\vfill
+\huge Metaverse
+\normalsize 
+\smallskip
+\smallskip
+
+\dots a telescope view into a different universe
+
+\bigskip\bigskip\bigskip
+
+\large Jonas Betzendahl\\
+\texttt{@LambdaTotoro@chaos.social}\\
+PwC Inspiration Hub\, 2023-09-14
+\end{center}
+\Put(330,0){\includegraphics[width=0.2\textwidth,keepaspectratio]{images/noun-telescope.png} }
+\end{frame}
+
+\begin{frame}
+\frametitle{Who am I?}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight,keepaspectratio]{images/jonas} 
+\end{center}
+\end{minipage}%
+\hfill
+\begin{minipage}{0.55\textwidth}
+\begin{itemize}
+\item Jonas Betzendahl
+\item \dots from Bielefeld
+\item \dots Studies:
+\begin{itemize}
+\item Cognitive Informatics
+\item Intelligent Systems
+\end{itemize}
+\item \dots Science Communication since 2016
+\item \dots PhD Student in Informatics @ FAU Erlangen-Nürnberg (AI in Teaching)
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Who is this?}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.7\textheight,keepaspectratio]{images/cute_alien} 
+\end{center}
+\end{minipage}%
+\hfill\pause
+\begin{minipage}{0.55\textwidth}
+\begin{itemize}
+\item Q-t'$\forall$-l-ee-$\mathbb{N}$ (``cute alien'')
+\item New to our sector of the milky way
+\item Very curious, slightly naive
+\item Wants to learn about the metaverse,\\ for some reason\dots
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+\section{What IS the Metaverse?}
+
+\begin{frame}
+\begin{center}
+\Large
+Part I:\bigskip\\
+\huge
+What \emph{IS} the Metaverse?
+\end{center}
+\end{frame}
+
+\subsection{Etymology}
+
+\begin{frame}
+\begin{center}
+\includegraphics[height=0.825\textheight,keepaspectratio]{images/cute_alien_speech_meta.png} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[height=0.825\textheight,keepaspectratio]{images/cute_alien_speech_not_meta.png} 
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[height=0.8\textheight,keepaspectratio]{images/snow-crash} 
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.55\textwidth}
+\begin{center}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Definition Attempts}
+There are \emph{many} different definitions of the Metaverse.\\
+Here is one \emph{I} like:
+\vfill
+
+\begin{minipage}{0.65\textwidth}
+``\emph{The} Metaverse \emph{is a collection of connected virtual spaces that allow users to interact with their digital environment and other users.
+\medskip
+
+Often these spaces will be modelled after parts of the real world and incorporate avatars as representations of connected users.''}
+\end{minipage}
+\pause
+\Put(0,0){\includegraphics[width=0.4\textwidth,keepaspectratio]{images/cute_alien_speech_vague.png} }
+\end{frame}
+
+\begin{frame}
+There are two broad perspectives on why any useful definition of the Metaverse tends
+to be vague\dots\bigskip\bigskip
+
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\Large
+\emph{cynical}
+\normalsize\bigskip
+
+The definition is vague because ``Metaverse'' is an industry buzzword without any
+actual technical meaning.
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\Large
+\emph{hopeful}
+\normalsize\bigskip
+
+The definition is vague because the idea is general and encompasses a large number of use cases, similar to the internet.
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Timeline}
+\vfill\vfill
+\begin{center}
+\includegraphics[height=0.3\textheight,keepaspectratio]{images/delorean.png} 
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+\section{What ISN'T the Metaverse?}
+
+\begin{frame}
+\begin{center}
+\Large
+Part II:\bigskip\\
+\huge
+What \emph{ISN'T} the Metaverse?
+\end{center}
+\end{frame}
+
+\subsection{VR Headsets}
+
+\begin{frame}
+\begin{center}
+\Large
+Part II.1:\bigskip\\
+\huge
+The Metaverse is not\dots\\ only for VR headsets
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}{0.55\textwidth}
+\begin{center}
+\includegraphics[width=0.8\textwidth,keepaspectratio]{images/stunning_vr_headset} 
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.45\textwidth}
+We often think of \emph{this} when we think about the Metaverse. But in practice,
+it can include a range of devices for both input and output and incorporate elements from:
+\begin{itemize}
+\item Augmented Reality
+\item Mixed Reality
+\item Virtual Reality
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Augmented Reality}
+\begin{center}
+\includegraphics[width=0.7\textwidth,keepaspectratio]{images/pokemon-go-ar1.jpg} 
+\end{center}
+\pause
+\Put(20,260){\rotatebox{-6}{\includegraphics[width=0.85\textwidth,keepaspectratio]{images/pokemon-go-ar2.jpg}}}
+\end{frame}
+
+\begin{frame}
+\frametitle{Mixed Reality}
+\end{frame}
+
+\begin{frame}
+\frametitle{Virtual Reality}
+\end{frame}
+
+\subsection{Work only}
+
+\begin{frame}
+\begin{center}
+\Large
+Part II.2:\bigskip\\
+\huge
+The Metaverse is not\dots\\ only for work
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=\textwidth,keepaspectratio]{images/second_life_logo} 
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.55\textwidth}
+\begin{center}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=0.7\textwidth,keepaspectratio]{images/roblox_logo} 
+\end{center}
+\end{minipage}%
+\begin{minipage}{0.55\textwidth}
+\begin{center}
+\end{center}
+\end{minipage}
+\end{frame}
+
+
+\subsection{Built on the Blockchain}
+
+\begin{frame}
+\begin{center}
+\Large
+Part II.3:\bigskip\\
+\huge
+The Metaverse is not\dots\\ ``built on the blockchain''
+\end{center}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\includegraphics[height=0.95\textheight, keepaspectratio]{images/electricity_consumption} 
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+\section{Science on the Metaverse}
+
+\begin{frame}
+\begin{center}
+\Large
+Part III:\bigskip\\
+\huge
+Science on the Metaverse
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+\section{The future of the Metaverse?}
+
+\begin{frame}
+\begin{center}
+\Large
+Part IV:\bigskip\\
+\huge
+The future of the Metaverse?
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{The Hype Cycle}
+\begin{center}
+\includegraphics[height=0.65\textheight,keepaspectratio]{images/hype_cycle.jpg} 
+\end{center}
+\end{frame}
+
+%------------------------------------------------------------------------------------
+\section{End}
+{
+    \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{images/sources}}
+    \setbeamertemplate{navigation symbols}{}
+    
+    \begin{frame}
+	\frametitle{Conclusions}
+	\end{frame}
+    
+    \begin{frame}[fragile]
+    \frametitle{Sources}
+    \dots
+    \vfill
+    \end{frame}
+}
+
+\end{document}
+
